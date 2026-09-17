@@ -14,16 +14,18 @@ Ghi tên ZIP đúng như file trong `submissions/` và số ảnh đã vẽ, Sav
 
 | Task | File ZIP đúng tên | Hoàn thành mấy ảnh | Điểm tối đa (coach chấm sau) |
 | --- | --- | ---: | ---: |
-| easy_semantic | … | … / 3 | 20 |
-| medium_instance | … | … / 3 | 32 |
-| hard_panoptic | … | … / 2 | 30 |
-| cp1_holes | … | … / 1 | 3 |
-| cp2_slice | … | … / 1 | 3 |
-| cp5_occlusion | … | … / 1 | 3 |
-| cp3_thin | … | … / 1 | 3 |
-| cp4_curb | … | … / 1 | 3 |
-| cp6_coverage | … | … / 1 | 3 |
+| easy_semantic | easy_semantic.zip | 3 / 3 | 20 |
+| medium_instance | medium_instance.zip | 3 / 3 | 32 |
+| hard_panoptic | hard_panoptic.zip | 2 / 2 (cấu trúc OK, nhưng thiếu stuff class trong annotation — xem ghi chú) | 30 |
+| cp1_holes | chưa có | 0 / 1 | 3 |
+| cp2_slice | chưa có | 0 / 1 | 3 |
+| cp5_occlusion | chưa có | 0 / 1 | 3 |
+| cp3_thin | chưa có | 0 / 1 | 3 |
+| cp4_curb | chưa có | 0 / 1 | 3 |
+| cp6_coverage | chưa có | 0 / 1 | 3 |
 | **Tổng tối đa** | | | **100** |
+
+Ghi chú QC (chạy `scripts/inspect_submissions.py`, tương đương notebook BƯỚC 3–7): `hard_panoptic.zip` đọc được cấu trúc COCO hợp lệ (46 annotation, toàn polygon) nhưng **chưa thấy class stuff nào** (building, sidewalk, sky, vegetation) trong annotation — chỉ có road ở phần stuff. Cần kiểm lại trong CVAT xem đã vẽ các vùng stuff này chưa trước khi export lại. 6 checkpoint còn lại (`cp1_holes`, `cp2_slice`, `cp5_occlusion`, `cp3_thin`, `cp4_curb`, `cp6_coverage`) chưa có ZIP trong `submissions/`.
 
 Nếu export lỗi, ghi task, dữ liệu đã Save đến đâu và lỗi đã báo coach.
 
